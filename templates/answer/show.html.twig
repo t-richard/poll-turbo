@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Answer{% endblock %}
+
+{% block body %}
+    <h1>Answer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ answer.id }}</td>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td>{{ answer.monday ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Tuesday</th>
+                <td>{{ answer.tuesday ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Wednesday</th>
+                <td>{{ answer.wednesday ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Thursday</th>
+                <td>{{ answer.thursday ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Friday</th>
+                <td>{{ answer.friday ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ answer.createdAt ? answer.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('answer_index') }}">back to list</a>
+
+    <a href="{{ path('answer_edit', {'id': answer.id}) }}">edit</a>
+
+    {{ include('answer/_delete_form.html.twig') }}
+{% endblock %}

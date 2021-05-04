@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<turbo-frame id="form" src="{{ url('answer_new') }}">
+    <img src="https://media.tenor.com/images/b28e699b2c0df03fc05d017cf4846d5f/tenor.gif">
+</turbo-frame>
+<div id="chart_stream" {{ turbo_stream_listen('poll' ~ poll.id) }}>
+    <turbo-frame id="chart" src="{{ fragment_uri(controller('App\\Controller\\PollController::chart', {id: poll.id})) }}">
+        <img src="https://media.tenor.com/images/b28e699b2c0df03fc05d017cf4846d5f/tenor.gif">
+    </turbo-frame>
+</div>
+{% endblock %}

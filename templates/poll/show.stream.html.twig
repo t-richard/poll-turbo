@@ -1,0 +1,8 @@
+<turbo-stream action="update" target="chart_stream">
+    <template>
+        {{ render_esi(controller('App\\Controller\\PollController::chart', {id: poll.id})) }}
+    </template>
+</turbo-stream>
+
+
+

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Answer{% endblock %}
+
+{% block body %}
+    <h1>Create new Answer</h1>
+
+    <turbo-frame id="form">
+        {{ include('answer/_form.html.twig') }}
+    </turbo-frame>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poll{% endblock %}
+
+{% block body %}
+    <h1>Présences du {{ poll.startDate|date }} au {{ poll.endDate|date }}</h1>
+
+    {{ render_esi(controller('App\\Controller\\PollController::chart', {id: poll.id})) }}
+{% endblock %}
